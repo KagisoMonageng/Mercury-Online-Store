@@ -2,20 +2,24 @@ var express = require("express");
 var cors = require("cors");
 require("dotenv").config();
 var app = express();
+
 var corsOptions = {
   origin: "*",
 };
+var account = require('./app/routes/account')
+
+
 
 app.use(express.json());
 app.use(cors(corsOptions));
 
-app.listen(8080, () => {
-  console.log("Server running on port 8080");
+app.listen(process.env.PORT|3000, () => {
+  console.log(`Server running on port ${process.env.PORT}`);
 });
 
 app.get('/', (req, res) => {
-  res.send('Hey this is my API running 🥳')
+  res.send('API is ready!')
 })
 
-module.exports = app;
+app.use('/account',account)
 
