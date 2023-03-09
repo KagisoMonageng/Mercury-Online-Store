@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors(corsOptions));
 
 app.listen(3000, () => {
-  console.log(`Server running on port ${process.env.PORT}`);
+  console.log(`Server running on port 3000`);
 });
 
 app.get('/', (req, res) => {
