@@ -12,7 +12,7 @@ var account = require('./app/routes/account')
 
 app.use(express.json());
 app.use(cors(corsOptions));
-app.use('/account',account)
+//app.use('/account',account)
 
 app.listen(3000, () => {
   console.log(`Server running on port 3000`);
